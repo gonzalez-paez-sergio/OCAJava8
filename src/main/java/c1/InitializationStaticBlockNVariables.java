@@ -12,7 +12,6 @@ package c1;
  * @author sergiogp
  *
  */
-
 public class InitializationStaticBlockNVariables {
 
 	private String name = "Fluffy";
