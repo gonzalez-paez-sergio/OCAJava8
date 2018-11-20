@@ -1,7 +1,6 @@
 package c1;
 
 import java.util.Date;
-import java.sql.*;
 // The import java.sql.Date collides with another import statement
 // import java.sql.Date;
 

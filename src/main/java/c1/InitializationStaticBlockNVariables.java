@@ -18,13 +18,13 @@ public class InitializationStaticBlockNVariables {
     System.out.println("first static block");
   }
 
+  {
+    System.out.println("second static block");
+  }
+
   public InitializationStaticBlockNVariables() {
     name = "Tiny";
     System.out.println("setting constructor");
-  }
-
-  {
-    System.out.println("second static block");
   }
 
   public static void main(String[] args) {
