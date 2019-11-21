@@ -11,16 +11,19 @@ package c2;
  * 2. Casting primitives is required anytime you go from a larger numerical data type into  a
  * smaller one
  *
- *
  * 3. Overflow is when a number is so large that it will no longer fit  within the data type, so the
  * system "wraps around" to the next lowest value and counts up from there. There’s also an
  * analogous underflow, when the number is too low to fit in  the data type.
+ *
+ * 4. when using the assignment operator, the result of the assignment is an expression in and of
+ * itself, equal to the value of the assignment
  * </pre>
  */
 public class UnderstandingJavaOperators {
 
   public static void main(String[] s) {
     castingPrimitives();
+    assignmentAndCompoundOperators();
   }
 
   private static int y;
@@ -55,7 +58,7 @@ public class UnderstandingJavaOperators {
 //		short s2 = 32768;//NOOK , this number is out of range for short
     short s3 = (short) 32768;//OK , but the value assigned will be  -32768 (overflow)
     short s4 = (short) 32769;//OK , but the value assigned will be  -32767 (overflow)
-		
+
     short s5 = (short) -32768;//OK
     short s6 = (short) -32769;//OK , but the value assigned will be  32767 (underflow )
 
@@ -63,5 +66,20 @@ public class UnderstandingJavaOperators {
     System.out.println(s4);
     System.out.println(s5);
     System.out.println(s6);
+
+    int x = 4;
+    long y = 9;
+//    int z = x * y;//this does not compile as the result is a long
+
+    x *= 9;//this compiles, as the compound operator automatically casts the result
+
+  }
+
+  public static void assignmentAndCompoundOperators() {
+    int x = 0;
+    int y = (x = 4); //this will assign the value 4 to x and to y
+    System.out.println(y);
+    y = (x += 4); //the compound assignment operator has the same behaviour
+    System.out.println(y);
   }
 }
