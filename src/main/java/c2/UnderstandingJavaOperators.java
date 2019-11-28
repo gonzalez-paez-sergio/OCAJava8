@@ -18,8 +18,7 @@ package c2;
  * 4. when using the assignment operator, the result of the assignment is an expression in and of
  * itself, equal to the value of the assignment
  *
- * 5. relational operators who operates on numeric values do operates in primitive types only. (this statement is FALSE)  in
- * case the operands are not the same data type the smaller one is promoted
+ * 5. For object comparison the equality operator is applied to references to the objects, not the objects they point to
  * </pre>
  */
 public class UnderstandingJavaOperators {
