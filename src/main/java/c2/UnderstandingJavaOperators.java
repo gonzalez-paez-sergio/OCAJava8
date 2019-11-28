@@ -17,6 +17,9 @@ package c2;
  *
  * 4. when using the assignment operator, the result of the assignment is an expression in and of
  * itself, equal to the value of the assignment
+ *
+ * 5. relational operators who operates on numeric values do operates in primitive types only. (this statement is FALSE)  in
+ * case the operands are not the same data type the smaller one is promoted
  * </pre>
  */
 public class UnderstandingJavaOperators {
@@ -24,6 +27,7 @@ public class UnderstandingJavaOperators {
   public static void main(String[] s) {
     castingPrimitives();
     assignmentAndCompoundOperators();
+    relationalOperators();
   }
 
   private static int y;
@@ -81,5 +85,20 @@ public class UnderstandingJavaOperators {
     System.out.println(y);
     y = (x += 4); //the compound assignment operator has the same behaviour
     System.out.println(y);
+  }
+
+
+  public static void relationalOperators() {
+    int x = 10, y = 20, z = 10;
+    System.out.println(x < y); // Outputs true
+    System.out.println(x <= y); // Outputs true
+    System.out.println(x >= z); // Outputs true
+    System.out.println(x > z); // Outputs false
+
+    Integer x1 = 1;
+    Double y1 = 1d;
+    System.out.println(y1 < x1);
+
+    System.out.println(x1);
   }
 }
